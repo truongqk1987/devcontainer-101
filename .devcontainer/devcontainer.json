@@ -1,0 +1,71 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "init-101-truongqk1987",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	// "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		5173,
+		27017
+	],
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	// "build": {
+	// 	"dockerfile": "Dockerfile",
+	// 	"args": {
+	// 		"VARIANT": "18-bullseye"
+	// 	}
+	// },
+	"dockerComposeFile": "docker-compose.yml",
+	"remoteUser": "node",
+	"postCreateCommand": "yarn install && sudo chown node node_modules",
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"formulahendry.auto-close-tag",
+				"formulahendry.auto-rename-tag",
+				"BracketPairColorDLW.bracket-pair-color-dlw",
+				"mikestead.dotenv",
+				"dbaeumer.vscode-eslint",
+				"eamodio.gitlens",
+				"ritwickdey.LiveServer",
+				"christian-kohler.path-intellisense",
+				"esbenp.prettier-vscode",
+				"vscode-icons-team.vscode-icons",
+				"redhat.vscode-yaml"
+			],
+			"settings": {
+				"auto-close-tag.activationOnLanguage": [
+					"xml",
+					"php",
+					"blade",
+					"ejs",
+					"jinja",
+					"javascript",
+					"javascriptreact",
+					"typescript",
+					"typescriptreact",
+					"plaintext",
+					"markdown",
+					"vue",
+					"liquid",
+					"erb",
+					"lang-cfml",
+					"cfml",
+					"HTML (EEx)",
+					"HTML (Eex)",
+					"plist"
+				],
+				"editor.formatOnSave": true,
+				"eslint.codeActionsOnSave.rules": null
+			}
+		}
+	}
+}
